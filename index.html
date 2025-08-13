@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+            /* header, album, footer */
+
+        }
+
+        .header,
+        .footer {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .header {
+            background-color: #222;
+            /* Gradient background */
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            /* Shadow */
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Add a glowing underline effect */
+        .header::after {
+            content: "";
+            position: absolute;
+            bottom: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0%;
+            height: 3px;
+            background: white;
+            transition: width 0.4s ease;
+        }
+
+        .header:hover::after {
+            width: 50%;
+        }
+
+        /* Optional slight scale on hover */
+        .header:hover {
+            transform: scale(1.02);
+            transition: transform 0.3s ease;
+        }
+
+        .album {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            /* 3 columns */
+            gap: 10px;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        .album img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+        }
+
+        /* Responsive based on screen height */
+        @media (max-width: 500px) {
+            .album {
+                grid-template-columns: 1fr;
+                /* 1 image per row */
+            }
+        }
+
+        .social-footer {
+            background-color: #222;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .social-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .social-link img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .social-link img:hover {
+            transform: scale(1.1);
+            opacity: 0.8;
+        }
+    </style>
+    <title>Gallery</title>
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">Gujrat Diaries</header>
+
+        <section class="album">
+            <img src="GD1.jpg" alt="Image 1">
+            <img src="GD2.jpg" alt="Image 2">
+            <img src="GD3.jpg" alt="Image 3">
+            <img src="GD4.jpg" alt="Image 4">
+            <img src="GD5.jpg" alt="Image 5">
+            <img src="GD6.jpg" alt="Image 6">
+            <img src="GD7.jpg" alt="Image 7">
+            <img src="GD8.jpg" alt="Image 8">
+            <img src="GD9.jpg" alt="Image 9">
+        </section>
+
+        <footer class="social-footer">
+            <div class="social-container">
+                <a href="https://www.instagram.com/harshverma.ai/" target="_blank" class="social-link">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+                </a>
+                <a href="https://l.instagram.com/?u=https%3A%2F%2Fwww.linkedin.com%2Fin%2Fharsh-verma-linkdin%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAaeDsiuieWjXrptXpciVn_pBsacSlvcXdNPitlSPMLA07sibhwav7p19A74siQ_aem_vjPI-p6Np4M78cNuh0rpNA&e=AT3dEBu04BVTvXHp-Mk65j92d0jj-sA1YKvyM7zgAy7jEhW9gp3iXax6AQKlF0XdQePNrbFj-LQTIKoXm2NXs-EOFTfxnlJHR8wYcg" target="_blank" class="social-link">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png"
+                        alt="LinkedIn">
+                </a>
+                <a href="https://facebook.com/yourprofile" target="_blank" class="social-link">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Facebook_Logo.png" alt="Facebook">
+                </a>
+                <a href="https://twitter.com/yourprofile" target="_blank" class="social-link">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Logo_of_Twitter.svg" alt="Twitter">
+                </a>
+            </div>
+        </footer>
+
+    </div>
+</body>
+
+</html>
